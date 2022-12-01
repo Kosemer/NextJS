@@ -1,12 +1,14 @@
-import NewMeetupFroms from '../../components/meetups/NewMeetupForm'
+import Layout from "../../components/layout/Layout";
+import NewMeetupFroms from "../../components/meetups/NewMeetupForm";
 
 function NewMeetupPage() {
+  const addMeetupHandler = (enteredMeetupData) => {
+    console.log(enteredMeetupData);
+  };
 
-const addMeetupHandler = (enteredMeetupData) => {
-    console.log(enteredMeetupData)
-}
- 
-    return ( <NewMeetupFroms onAddMeetup={addMeetupHandler}></NewMeetupFroms> );
+  return (
+      <NewMeetupFroms onAddMeetup={addMeetupHandler}></NewMeetupFroms>
+  );
 }
 
 export default NewMeetupPage;
