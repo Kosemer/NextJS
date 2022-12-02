@@ -20,4 +20,5 @@ function HomePage() {
     return <MeetupList meetups={DUMMY_MEETUPS}></MeetupList>
 }
 
+export function getStaticProps () {}
 export default HomePage;
