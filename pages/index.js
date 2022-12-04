@@ -16,9 +16,24 @@ const DUMMY_MEETUPS = [{
 }
 ];
 
-function HomePage() {
-    return <MeetupList meetups={DUMMY_MEETUPS}></MeetupList>
+function HomePage(props) {
+    return <MeetupList meetups={props.meetups}></MeetupList>
 }
 
-export function getStaticProps () {}
+/*export async function getServerSideProps (context) {
+    return{
+        props: {
+            meetups: DUMMY_MEETUPS
+        }
+    }
+}*/
+
+export async function getStaticProps () {
+    return {
+        props: {
+            meetups: DUMMY_MEETUPS
+        },
+        revalidate: 1
+    }
+}
 export default HomePage;
